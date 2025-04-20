@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
             val enteredPassword = password.text.toString()
 
             if (isValidLogin(enteredUsername, enteredPassword)) {
-                // startActivity(Intent(this, HomeActivity::class.java))
+                startActivity(Intent(this, Principal::class.java))
             } else {
                 showErrorDialog()
             }

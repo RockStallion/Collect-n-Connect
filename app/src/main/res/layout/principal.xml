@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="10dp">
 
         <!-- Header con imagen, saludo y campana -->
         <LinearLayout
@@ -57,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:orientation="horizontal"
-            android:background="@color/cardview_dark_background"
+            android:background="@drawable/borde"
+            android:backgroundTint="#CCCCCC"
             android:padding="8dp"
             android:gravity="center_vertical"
             android:layout_marginBottom="16dp">
@@ -76,59 +77,89 @@
                 android:inputType="text" />
         </LinearLayout>
 
-        <!-- Your Collections -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your Collections"
-            android:textColor="#FFFFFF"
-            android:background="#D50000"
-            android:textSize="18sp"
-            android:padding="8dp" />
+
+        <!-- your collections -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:gravity="center">
+            android:orientation="vertical">
 
-            <View
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:background="@color/black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:background="#FF0000"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <View
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:background="@color/black" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Your Collections"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
 
-        <!-- Recommended for you -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/borde" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/borde" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="150dp"
+
+                        android:background="@drawable/borde" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#EEEEEE"
+        android:padding="16dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Recommended for you"
             android:textSize="16sp"
-            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black"
             android:layout_marginBottom="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <LinearLayout
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#DDDDDD"
-                android:padding="8dp">
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp">
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="#CCCCCC" />
+                    android:layout_height="91dp"
+                    android:background="@drawable/borde"
+                    android:backgroundTint="#CCCCCC" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,13 +172,15 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#DDDDDD"
-                android:padding="8dp">
+                android:background="@color/white"
+                android:padding="8dp"
+                android:layout_marginStart="8dp">
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="#CCCCCC" />
+                    android:layout_height="91dp"
+                    android:background="@drawable/borde"
+                    android:backgroundTint="#CCCCCC" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -156,8 +189,14 @@
                     android:layout_marginTop="4dp" />
             </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
 
-        <!-- News -->
+</LinearLayout>
+
+
+
+
+    <!-- News -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -166,72 +205,113 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
 
+        <!-- Menú inferior -->
         <View
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#CCCCCC"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="131dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/borde"
+            android:backgroundTint="#CCCCCC" />
 
-        <!-- Menu inferior -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal"
-            >
+            android:padding="10dp"
+            android:weightSum="4">
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
+
                 <View
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="#DDDDDD"
                     android:layout_marginBottom="4dp"
-                    android:backgroundTint="#CCCCCC"
-                    android:layout_gravity="center" />/>
+                    android:background="@drawable/circulo"
+                    android:backgroundTint="#CCCCCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Scan"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
+
                 <View
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="#DDDDDD"
                     android:layout_marginBottom="4dp"
-                    android:backgroundTint="#CCCCCC" />/>
+                    android:background="@drawable/circulo"
+                    android:backgroundTint="#CCCCCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Sets"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
+
                 <View
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="#DDDDDD"
                     android:layout_marginBottom="4dp"
-                    android:backgroundTint="#CCCCCC" />/>
+                    android:background="@drawable/circulo"
+                    android:backgroundTint="#CCCCCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Pieces"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
+
                 <View
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:background="#DDDDDD"
                     android:layout_marginBottom="4dp"
-                    android:backgroundTint="#CCCCCC" />/>
+                    android:background="@drawable/circulo"
+                    android:backgroundTint="#CCCCCC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="For You"
+                    android:textSize="12sp" />
             </LinearLayout>
 
         </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>

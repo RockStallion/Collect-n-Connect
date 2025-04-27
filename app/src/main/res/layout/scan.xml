@@ -106,6 +106,7 @@
         <!-- Menú inferior -->
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -118,7 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/Scan">
 
                 <View
                     android:layout_width="48dp"
@@ -140,7 +142,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/Sets">
 
                 <View
                     android:layout_width="48dp"
@@ -162,7 +165,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/Pieces">
 
                 <View
                     android:layout_width="48dp"
@@ -185,7 +189,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/you">
 
                 <View
                     android:layout_width="48dp"

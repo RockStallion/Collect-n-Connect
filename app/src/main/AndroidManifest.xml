@@ -31,7 +31,8 @@
         <activity android:name=".Scan" />
         <activity android:name=".Sets" />
         <activity android:name=".Perfil" />
-
     </application>
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
 </manifest>

@@ -78,9 +78,7 @@
                 android:inputType="text" />
         </LinearLayout>
 
-
         <!-- your collections -->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="650dp"
@@ -94,13 +92,12 @@
                 android:gravity="center"
                 android:padding="10dp">
 
-
-
-
-
+                <!-- Agregar SurfaceView para la vista previa de la cámara -->
+                <android.view.SurfaceView
+                    android:id="@+id/camara"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
             </LinearLayout>
-
-
         </LinearLayout>
 
 

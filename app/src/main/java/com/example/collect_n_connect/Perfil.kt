@@ -3,9 +3,9 @@ package com.example.collect_n_connect
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 
-class Scan : ComponentActivity() {
+class Perfil : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.scan) // Asegúrate que este layout exista
+        setContentView(R.layout.perfil) // Asegúrate que este layout exista
     }
 }

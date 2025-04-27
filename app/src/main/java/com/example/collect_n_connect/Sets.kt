@@ -6,6 +6,6 @@ import androidx.activity.ComponentActivity
 class Sets : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.collections) // Asegúrate que este layout exista
+        setContentView(R.layout.sets) // Asegúrate que este layout exista
     }
 }

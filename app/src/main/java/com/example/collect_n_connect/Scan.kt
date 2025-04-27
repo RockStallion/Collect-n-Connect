@@ -2,6 +2,7 @@ package com.example.collect_n_connect
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
@@ -17,19 +18,21 @@ class Scan : ComponentActivity() {
         val PagSets: LinearLayout = findViewById(R.id.Sets)
         val PagPieces: LinearLayout = findViewById(R.id.Pieces)
         val PagYou: LinearLayout = findViewById(R.id.you)
+        val PagPerfil: ImageView = findViewById(R.id.perfil)
 
 
         PagScan.setOnClickListener {
-            val intent = Intent(this, com.example.collect_n_connect.Scan::class.java)
+            val intent = Intent(this, Scan::class.java)
             startActivity(intent)
         }
+
         PagSets.setOnClickListener {
             val intent = Intent(this, Sets::class.java)
             startActivity(intent)
         }
 
         PagPieces.setOnClickListener {
-            val intent = Intent(this, com.example.collect_n_connect.Pieces::class.java)
+            val intent = Intent(this, Pieces::class.java)
             startActivity(intent)
         }
 
@@ -37,6 +40,12 @@ class Scan : ComponentActivity() {
             val intent = Intent(this, Principal::class.java)
             startActivity(intent)
         }
+
+        PagPerfil.setOnClickListener {
+            val intent = Intent(this, Perfil::class.java)
+            startActivity(intent)
+        }
+
 
     }
 

@@ -27,10 +27,10 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Principal" />
         <activity android:name=".Collections" />
-        <activity android:name=".Perfil" />
         <activity android:name=".Pieces" />
         <activity android:name=".Scan" />
         <activity android:name=".Sets" />
+        <activity android:name=".Perfil" />
 
     </application>
 

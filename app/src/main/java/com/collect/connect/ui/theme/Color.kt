@@ -1,4 +1,4 @@
-package com.example.collect_n_connect.ui.theme
+package com.collect.connect.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

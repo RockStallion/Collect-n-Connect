@@ -1,11 +1,11 @@
-package com.example.collect_n_connect
+package com.collect.connect
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.example.collect_n_connect.R
 
 class Principal : ComponentActivity() {
 

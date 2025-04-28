@@ -1,4 +1,4 @@
-package com.example.collect_n_connect
+package com.collect.connect
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.example.collect_n_connect.R
 
 class MainActivity : ComponentActivity() {
     private lateinit var username: EditText

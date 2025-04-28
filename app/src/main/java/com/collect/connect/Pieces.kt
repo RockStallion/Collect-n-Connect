@@ -1,16 +1,18 @@
-package com.example.collect_n_connect
+package com.collect.connect
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
+import com.example.collect_n_connect.R
 
-class Sets : ComponentActivity() {
+class Pieces : ComponentActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.sets)
+        setContentView(R.layout.pieces)
 
         val PagScan: LinearLayout = findViewById(R.id.Scan)
         val PagSets: LinearLayout = findViewById(R.id.Sets)
@@ -43,7 +45,6 @@ class Sets : ComponentActivity() {
             val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
-
 
     }
 }

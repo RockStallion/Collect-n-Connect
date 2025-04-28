@@ -1,4 +1,4 @@
-package com.example.collect_n_connect
+package com.collect.connect
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,6 +11,7 @@ import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.collect_n_connect.R
 
 class Scan : ComponentActivity() {
 

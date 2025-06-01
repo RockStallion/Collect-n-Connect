@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import com.example.collect_n_connect.R
+import com.google.firebase.auth.FirebaseAuth
 
 class Sets : ComponentActivity() {
-
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sets)
@@ -19,6 +21,16 @@ class Sets : ComponentActivity() {
         val PagYou: LinearLayout = findViewById(R.id.you)
         val PagPerfil: ImageView = findViewById(R.id.perfil)
 
+        auth = FirebaseAuth.getInstance()
+        val NameUser = findViewById<TextView>(R.id.user)
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val name = currentUser.displayName ?: currentUser.email ?: "collector"
+            NameUser.text = "Hello, $name!"
+        } else {
+            NameUser.text = "Hello, collector!"
+        }
 
         PagScan.setOnClickListener {
             val intent = Intent(this, Scan::class.java)

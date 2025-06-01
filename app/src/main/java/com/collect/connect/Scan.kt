@@ -8,17 +8,19 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.collect_n_connect.R
+import com.google.firebase.auth.FirebaseAuth
 
 class Scan : ComponentActivity() {
 
     private var camera: Camera? = null
     private lateinit var Cam: SurfaceView
     private lateinit var surfaceHolder: SurfaceHolder
-
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.scan)
@@ -62,6 +64,16 @@ class Scan : ComponentActivity() {
             }
         })
 
+        auth = FirebaseAuth.getInstance()
+        val NameUser = findViewById<TextView>(R.id.user)
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val name = currentUser.displayName ?: currentUser.email ?: "collector"
+            NameUser.text = "Hello, $name!"
+        } else {
+            NameUser.text = "Hello, collector!"
+        }
         // Configuración de los botones de navegación
         val PagScan: LinearLayout = findViewById(R.id.Scan)
         val PagSets: LinearLayout = findViewById(R.id.Sets)

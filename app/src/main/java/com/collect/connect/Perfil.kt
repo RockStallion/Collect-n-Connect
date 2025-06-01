@@ -2,6 +2,7 @@ package com.collect.connect
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -44,7 +45,11 @@ class Perfil : ComponentActivity() {
             emailText.text = "Email: unknown"
             passwordText.text = "Password: ********"
         }
-
+        val btnAgregarSet = findViewById<Button>(R.id.btnAgregarSet)
+        btnAgregarSet.setOnClickListener {
+            val intent = Intent(this, AgregarSetActivity::class.java)
+            startActivity(intent)
+        }
         PagScan.setOnClickListener {
             val intent = Intent(this, Scan::class.java)
             startActivity(intent)

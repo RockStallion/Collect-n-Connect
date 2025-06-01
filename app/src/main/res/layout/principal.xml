@@ -87,6 +87,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/coleccion"
                 android:layout_width="match_parent"
                 android:layout_height="222dp"
                 android:background="#FF0000"
@@ -108,6 +109,7 @@
                     android:orientation="horizontal">
 
                     <View
+
                         android:layout_width="100dp"
                         android:layout_height="150dp"
                         android:layout_marginEnd="15dp"

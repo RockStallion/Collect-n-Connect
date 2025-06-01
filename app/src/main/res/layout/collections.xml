@@ -195,12 +195,16 @@
                 android:orientation="vertical"
                 android:id="@+id/Scan">
 
-                <View
+                <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginBottom="4dp"
                     android:background="@drawable/circulo"
-                    android:backgroundTint="#CCCCCC" />
+                    android:backgroundTint="#CCCCCC"
+                    android:src="@drawable/ic_scan"
+                    android:contentDescription="Icono"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -218,12 +222,16 @@
                 android:orientation="vertical"
                 android:id="@+id/Sets">
 
-                <View
+                <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginBottom="4dp"
                     android:background="@drawable/circulo"
-                    android:backgroundTint="#CCCCCC" />
+                    android:backgroundTint="#CCCCCC"
+                    android:src="@drawable/ic_sets"
+                    android:contentDescription="Icono"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -241,12 +249,16 @@
                 android:orientation="vertical"
                 android:id="@+id/Pieces">
 
-                <View
+                <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginBottom="4dp"
                     android:background="@drawable/circulo"
-                    android:backgroundTint="#CCCCCC" />
+                    android:backgroundTint="#CCCCCC"
+                    android:src="@drawable/ic_pieces"
+                    android:contentDescription="Icono"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -265,12 +277,16 @@
                 android:orientation="vertical"
                 android:id="@+id/you">
 
-                <View
+                <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginBottom="4dp"
                     android:background="@drawable/circulo"
-                    android:backgroundTint="#CCCCCC" />
+                    android:backgroundTint="#CCCCCC"
+                    android:src="@drawable/ic_you"
+                    android:contentDescription="Icono"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:layout_width="wrap_content"

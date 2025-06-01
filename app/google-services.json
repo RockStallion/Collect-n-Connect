@@ -9,6 +9,25 @@
       "client_info": {
         "mobilesdk_app_id": "1:710459811490:android:08780cbca934850c55d9fb",
         "android_client_info": {
+          "package_name": "com.collect.connect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEaTzT5v-6cmXitdsd3v-kZ-y7Up_59yM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710459811490:android:a1016974df085bcd55d9fb",
+        "android_client_info": {
           "package_name": "com.example.collect_n_connect"
         }
       },

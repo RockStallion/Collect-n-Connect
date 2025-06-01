@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.collect_n_connect.R
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : ComponentActivity() {
+    private lateinit var auth: FirebaseAuth
     private lateinit var username: EditText
     private lateinit var password: EditText
     private lateinit var loginButton: Button
@@ -18,39 +21,44 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        auth = FirebaseAuth.getInstance()
         username = findViewById(R.id.username)
         password = findViewById(R.id.password)
         loginButton = findViewById(R.id.loginButton)
         signupText = findViewById(R.id.signupText)
 
         loginButton.setOnClickListener {
-            val enteredUsername = username.text.toString()
-            val enteredPassword = password.text.toString()
+            val email = username.text.toString().trim()
+            val pass = password.text.toString().trim()
 
-            if (isValidLogin(enteredUsername, enteredPassword)) {
-                startActivity(Intent(this, Principal::class.java))
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+                loginUser(email, pass)
             } else {
-                showErrorDialog()
+                Toast.makeText(this, "Por favor, llena todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
 
         signupText.setOnClickListener {
-            // Ir a RegisterActivity
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
     }
 
-    private fun isValidLogin(username: String, password: String): Boolean {
-        return username == "admin" && password == "1234"
-    }
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    val displayName = user?.displayName ?: user?.email
 
-    private fun showErrorDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.setMessage("Credenciales incorrectas")
-            .setCancelable(false)
-            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-        builder.create().show()
+                    Toast.makeText(this, "Bienvenido: $displayName", Toast.LENGTH_SHORT).show()
+
+                    // Abrir la siguiente pantalla (Principal)
+                    startActivity(Intent(this, Principal::class.java))
+                    finish() // para que no regrese a login al presionar atrás
+                } else {
+                    Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }

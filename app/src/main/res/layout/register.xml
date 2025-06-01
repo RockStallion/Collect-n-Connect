@@ -55,7 +55,7 @@
                 android:textColor="#8C9796" />
 
             <EditText
-                android:id="@+id/nameEditText"
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
@@ -68,20 +68,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Usuario"
+                android:text="Correo"
                 android:textColor="#8C9796" />
 
+            <!-- Contraseña -->
             <EditText
-                android:id="@+id/usernameEditText"
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
-                android:hint="Usuario"
+                android:backgroundTint="#DDDDDD"
+                android:hint="Correo"
                 android:padding="12dp"
-                android:textColor="#000000"
-                android:backgroundTint="#DDDDDD" />
+                android:textColor="#000000" />
 
-            <!-- Contraseña -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                 android:textColor="#8C9796" />
 
             <EditText
-                android:id="@+id/passwordEditText"
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="24dp"

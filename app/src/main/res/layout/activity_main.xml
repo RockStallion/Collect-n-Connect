@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="Usuario"
+                android:text="Correo"
                 android:textColor="#8C9796"
                 android:textSize="14sp" />
 
@@ -71,7 +71,7 @@
                 android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="#DDDDDD"
-                android:hint="Username"
+                android:hint="Correo"
                 android:padding="12dp"
                 android:textColor="#000000" />
 

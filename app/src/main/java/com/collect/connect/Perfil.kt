@@ -22,14 +22,27 @@ class Perfil : ComponentActivity() {
         val PagPerfil: ImageView = findViewById(R.id.perfil)
 
         auth = FirebaseAuth.getInstance()
-        val NameUser = findViewById<TextView>(R.id.user)
+
+        val nameText = findViewById<TextView>(R.id.user)
+        val emailText = findViewById<TextView>(R.id.emailText)
+        val passwordText = findViewById<TextView>(R.id.passwordText) // si decides mostrarla
 
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            val name = currentUser.displayName ?: currentUser.email ?: "collector"
-            NameUser.text = "Hello, $name!"
+            val name = currentUser.displayName ?: "collector"
+            val email = currentUser.email ?: "unknown"
+
+            nameText.text = "Hello, $name!"
+            emailText.text = "Email: $email"
+
+            // Si guardaste la contraseña manualmente en SharedPreferences:
+            val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+            val password = sharedPref.getString("password", "********")
+            passwordText.text = "Password: $password"
         } else {
-            NameUser.text = "Hello, collector!"
+            nameText.text = "Hello, collector!"
+            emailText.text = "Email: unknown"
+            passwordText.text = "Password: ********"
         }
 
         PagScan.setOnClickListener {

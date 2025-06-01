@@ -97,9 +97,18 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/emailText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sets:"
+                    android:text="Email:"
+                    android:textColor="#888888"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/passwordText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password:"
                     android:textColor="#888888"
                     android:textSize="14sp" />
             </LinearLayout>

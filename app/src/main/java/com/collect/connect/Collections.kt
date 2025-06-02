@@ -1,11 +1,13 @@
 package com.collect.connect
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -13,20 +15,21 @@ class Collections : ComponentActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.collections)
 
         auth = FirebaseAuth.getInstance()
 
-        val NameUser = findViewById<TextView>(R.id.user)
+        val nameUser = findViewById<TextView>(R.id.user)
 
         val currentUser = auth.currentUser
         if (currentUser != null) {
             val name = currentUser.displayName ?: currentUser.email ?: "collector"
-            NameUser.text = "Hello, $name!"
+            nameUser.text = "Hello, $name!"
         } else {
-            NameUser.text = "Hello, collector!"
+            nameUser.text = "Hello, collector!"
         }
 
 

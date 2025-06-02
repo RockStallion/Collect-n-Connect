@@ -208,17 +208,30 @@
                         android:orientation="vertical"
                         android:padding="8dp">
 
-                        <View
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="91dp"
-                            android:background="@drawable/borde"
-                            android:backgroundTint="#CCCCCC" />
+                            android:layout_height="86dp"
+                            android:layout_marginBottom="16dp">
+
+                            <ImageView
+                                android:id="@+id/img2"
+                                android:layout_width="match_parent"
+                                android:layout_height="86dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="@drawable/borde_curvo_rojo"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="4dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/anuncio2" />
+
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Name" />
+                            android:text="Bonsái de Arce Rojo Japonés" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -228,18 +241,30 @@
                         android:background="@color/white"
                         android:orientation="vertical"
                         android:padding="8dp">
-
-                        <View
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="91dp"
-                            android:background="@drawable/borde"
-                            android:backgroundTint="#CCCCCC" />
+                            android:layout_height="86dp"
+                            android:layout_marginBottom="16dp">
+
+                            <ImageView
+                                android:id="@+id/img1"
+                                android:layout_width="match_parent"
+                                android:layout_height="86dp"
+                                android:layout_marginBottom="16dp"
+                                android:background="@drawable/borde_curvo_rojo"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:padding="4dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/anuncio3" />
+
+                        </androidx.cardview.widget.CardView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Name" />
+                            android:text="Ramo de Flores Silvestres" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

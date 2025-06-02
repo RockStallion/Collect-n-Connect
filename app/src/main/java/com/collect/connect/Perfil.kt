@@ -1,11 +1,13 @@
 package com.collect.connect
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
@@ -74,7 +76,21 @@ class Perfil : ComponentActivity() {
             val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
+        val imagen1 = findViewById<ImageView>(R.id.img1)
+        imagen1.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/japanese-red-maple-bonsai-tree-10348"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
 
+        val imagen2 = findViewById<ImageView>(R.id.img2)
+        imagen2.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/wildflower-bouquet-10313"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
 
     }
 }

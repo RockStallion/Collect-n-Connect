@@ -1,10 +1,12 @@
 package com.collect.connect
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
@@ -60,5 +62,32 @@ class Principal : ComponentActivity() {
             startActivity(intent)
         }
 
+        val imagen1 = findViewById<ImageView>(R.id.img1)
+        imagen1.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/miles-morales-mask-76329"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        val imagen2 = findViewById<ImageView>(R.id.img2)
+        imagen1.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/iron-spider-man-bust-76326"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        val imagen3 = findViewById<ImageView>(R.id.miImagen)
+        imagen1.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/x-men-the-x-mansion-76294"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+        val notificacion = findViewById<ImageView>(R.id.imgNotificacion)
+        notificacion.setOnClickListener {
+            Toast.makeText(this, "No hay notificaciones de momento", Toast.LENGTH_SHORT).show()
+        }
     }
 }

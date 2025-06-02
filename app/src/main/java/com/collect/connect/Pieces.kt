@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
+import android.net.Uri
+import android.widget.Toast
 
 class Pieces : ComponentActivity() {
 
@@ -57,5 +59,16 @@ class Pieces : ComponentActivity() {
             startActivity(intent)
         }
 
+        val imagen = findViewById<ImageView>(R.id.miImagen)
+        imagen.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/2-fast-2-furious-nissan-skyline-gt-r-r34-car-42210"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+        val notificacion = findViewById<ImageView>(R.id.imgNotificacion)
+        notificacion.setOnClickListener {
+            Toast.makeText(this, "No hay notificaciones de momento", Toast.LENGTH_SHORT).show()
+        }
     }
 }

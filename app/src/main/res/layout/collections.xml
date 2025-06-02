@@ -49,9 +49,12 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/imgNotificacion"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_notification" />
+                android:src="@drawable/ic_notification"
+                android:clickable="true"
+                android:focusable="true" />
         </LinearLayout>
 
         <!-- Barra de búsqueda -->
@@ -172,12 +175,24 @@
             android:layout_marginBottom="8dp" />
 
         <!-- Menú inferior -->
-        <View
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="131dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/borde"
-            android:backgroundTint="#CCCCCC" />
+            android:layout_height="86dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/miImagen"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/anuncio"
+                android:scaleType="centerCrop"
+                android:background="@drawable/borde_curvo_rojo"
+                android:padding="4dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </androidx.cardview.widget.CardView>>
 
         <LinearLayout
 

@@ -49,9 +49,12 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/imgNotificacion"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_notification" />
+                android:src="@drawable/ic_notification"
+                android:clickable="true"
+                android:focusable="true" />
         </LinearLayout>
 
         <!-- Barra de búsqueda -->

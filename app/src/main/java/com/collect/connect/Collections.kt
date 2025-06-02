@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 import com.example.collect_n_connect.R
@@ -65,6 +66,9 @@ class Collections : ComponentActivity() {
             startActivity(intent)
         }
 
-
+        val notificacion = findViewById<ImageView>(R.id.imgNotificacion)
+        notificacion.setOnClickListener {
+            Toast.makeText(this, "No hay notificaciones de momento", Toast.LENGTH_SHORT).show()
+        }
     }
 }

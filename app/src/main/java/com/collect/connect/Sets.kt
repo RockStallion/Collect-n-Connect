@@ -1,11 +1,13 @@
 package com.collect.connect
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -75,7 +77,17 @@ class Sets : ComponentActivity() {
             val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
-
+        val imagen1 = findViewById<ImageView>(R.id.img2)
+        imagen1.setOnClickListener {
+            val url = "https://www.lego.com/es-mx/product/iron-man-mk4-bust-76327"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+        val notificacion = findViewById<ImageView>(R.id.imgNotificacion)
+        notificacion.setOnClickListener {
+            Toast.makeText(this, "No hay notificaciones de momento", Toast.LENGTH_SHORT).show()
+        }
         fetchLegoSets()
     }
 

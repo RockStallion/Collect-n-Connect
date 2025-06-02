@@ -9,6 +9,7 @@ import android.view.SurfaceView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -105,6 +106,7 @@ class Scan : ComponentActivity() {
             val intent = Intent(this, Perfil::class.java)
             startActivity(intent)
         }
+
     }
 
     // Método para mostrar errores

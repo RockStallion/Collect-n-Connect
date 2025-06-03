@@ -1,5 +1,6 @@
 package com.collect.connect
 
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +8,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.ComponentActivity
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
+import com.collect.connect.FireBase.ViewPagerAdapter
 import com.example.collect_n_connect.R
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 
-class Collections : ComponentActivity() {
+class Collections : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
@@ -24,7 +28,6 @@ class Collections : ComponentActivity() {
         auth = FirebaseAuth.getInstance()
 
         val nameUser = findViewById<TextView>(R.id.user)
-
         val currentUser = auth.currentUser
         if (currentUser != null) {
             val name = currentUser.displayName ?: currentUser.email ?: "collector"
@@ -33,6 +36,18 @@ class Collections : ComponentActivity() {
             nameUser.text = "Hello, collector!"
         }
 
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val viewPager = findViewById<ViewPager2>(R.id.viewPagerSets)
+
+        // Ahora "this" es AppCompatActivity (subclase de FragmentActivity)
+        viewPager.adapter = ViewPagerAdapter(this)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> tab.text = "Colección"
+                1 -> tab.text = "Mi Perfil"
+            }
+        }.attach()
 
         val PagScan: LinearLayout = findViewById(R.id.Scan)
         val PagSets: LinearLayout = findViewById(R.id.Sets)
@@ -40,30 +55,20 @@ class Collections : ComponentActivity() {
         val PagYou: LinearLayout = findViewById(R.id.you)
         val PagPerfil: ImageView = findViewById(R.id.perfil)
 
-
         PagScan.setOnClickListener {
-            val intent = Intent(this, Scan::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Scan::class.java))
         }
-
         PagSets.setOnClickListener {
-            val intent = Intent(this, Sets::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Sets::class.java))
         }
-
         PagPieces.setOnClickListener {
-            val intent = Intent(this, Pieces::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Pieces::class.java))
         }
-
         PagYou.setOnClickListener {
-            val intent = Intent(this, Principal::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Principal::class.java))
         }
-
         PagPerfil.setOnClickListener {
-            val intent = Intent(this, Perfil::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Perfil::class.java))
         }
 
         val notificacion = findViewById<ImageView>(R.id.imgNotificacion)

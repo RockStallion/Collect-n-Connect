@@ -52,6 +52,12 @@ class Perfil : ComponentActivity() {
             val intent = Intent(this, AgregarSetActivity::class.java)
             startActivity(intent)
         }
+
+        val Coleccion = findViewById<Button>(R.id.Coleccion)
+        Coleccion.setOnClickListener {
+            val intent = Intent(this, Collections::class.java)
+            startActivity(intent)
+        }
         PagScan.setOnClickListener {
             val intent = Intent(this, Scan::class.java)
             startActivity(intent)

@@ -1,0 +1,29 @@
+<!-- res/layout/fragment_profile_sets.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progressProfileSets"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvSinSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No tienes sets aún."
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProfileSets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+</RelativeLayout>

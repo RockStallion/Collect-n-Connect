@@ -53,7 +53,9 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.11"
     }
@@ -76,6 +78,8 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -91,4 +95,27 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
     implementation ("androidx.recyclerview:recyclerview:1.3.0")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation ("androidx.fragment:fragment-ktx:1.5.7")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    // Retrofit + Gson
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+// OkHttp (para el interceptor)
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.picasso:picasso:2.71828")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+// Glide
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+
+    implementation ("com.google.firebase:firebase-auth-ktx")
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+// RecyclerView & CardView
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("androidx.cardview:cardview:1.0.0")
+
+// Fragment KTX (para supportFragmentManager.commit { ... })
+    implementation ("androidx.fragment:fragment-ktx:1.4.1")
 }

@@ -1,17 +1,23 @@
 package com.collect.connect.Api
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collect_n_connect.R
+import com.squareup.picasso.Picasso
 
-class SetsAdapter(private var sets: List<LegoSet>) : RecyclerView.Adapter<SetsAdapter.SetViewHolder>() {
+class SetAdapter(private val sets: List<LegoSet>) : RecyclerView.Adapter<SetAdapter.SetViewHolder>() {
 
-    class SetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvSetName: TextView = itemView.findViewById(R.id.textSetName)
-        val tvSetYear: TextView = itemView.findViewById(R.id.textSetYear)
+    inner class SetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val txtName: TextView = itemView.findViewById(R.id.txtName)
+        val txtYear: TextView = itemView.findViewById(R.id.txtYear)
+        val imgSet: ImageView = itemView.findViewById(R.id.imgSet)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SetViewHolder {
@@ -20,15 +26,16 @@ class SetsAdapter(private var sets: List<LegoSet>) : RecyclerView.Adapter<SetsAd
     }
 
     override fun onBindViewHolder(holder: SetViewHolder, position: Int) {
-        val set = sets[position]
-        holder.tvSetName.text = set.name
-        holder.tvSetYear.text = "Año: ${set.year}"
+        val item = sets[position]
+        holder.txtName.text = item.name
+        holder.txtYear.text = "Year: ${item.year} | Pieces: ${item.num_parts}"
+        Picasso.get().load(item.set_img_url).into(holder.imgSet)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.set_url))
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = sets.size
-
-    fun updateData(newSets: List<LegoSet>) {
-        sets = newSets
-        notifyDataSetChanged()
-    }
 }

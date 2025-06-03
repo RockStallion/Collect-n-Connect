@@ -1,14 +1,15 @@
 package com.collect.connect.Api
 
+
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface RebrickableApi {
+    @Headers("Authorization: key a9e2b8a5c456ed94eba523db763a3e29")
     @GET("lego/sets/")
-    fun getSets(
-        @Query("page") page: Int? = null,
-        @Query("page_size") pageSize: Int? = null
+    fun getLegoSets(
+        @Query("page") page: Int = 1
     ): Call<SetsResponse>
 }

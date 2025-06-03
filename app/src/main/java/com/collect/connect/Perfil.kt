@@ -7,12 +7,16 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.ComponentActivity
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
+import com.collect.connect.FireBase.ViewPagerAdapter
 import com.example.collect_n_connect.R
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 
-class Perfil : ComponentActivity() {
+class Perfil : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,6 +101,20 @@ class Perfil : ComponentActivity() {
             intent.data = Uri.parse(url)
             startActivity(intent)
         }
+
+
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val viewPager = findViewById<ViewPager2>(R.id.viewPagerSets)
+
+        // Ahora "this" es AppCompatActivity (subclase de FragmentActivity)
+        viewPager.adapter = ViewPagerAdapter(this)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> tab.text = "Colección"
+                1 -> tab.text = "Mi Perfil"
+            }
+        }.attach()
 
     }
 }

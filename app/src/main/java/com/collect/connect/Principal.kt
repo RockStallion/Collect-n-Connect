@@ -10,8 +10,13 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
+import androidx.viewpager2.widget.ViewPager2
+import com.collect.connect.FireBase.ViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import androidx.appcompat.app.AppCompatActivity
 
-class Principal : ComponentActivity() {
+class Principal : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
@@ -30,6 +35,19 @@ class Principal : ComponentActivity() {
         } else {
             NameUser.text = "Hello, collector!"
         }
+
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val viewPager = findViewById<ViewPager2>(R.id.viewPagerSets)
+
+        // Ahora "this" es AppCompatActivity (subclase de FragmentActivity)
+        viewPager.adapter = ViewPagerAdapter(this)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> tab.text = "Colección"
+                1 -> tab.text = "Mi Perfil"
+            }
+        }.attach()
 
         val PagScan: LinearLayout = findViewById(R.id.Scan)
         val PagSets: LinearLayout = findViewById(R.id.Sets)

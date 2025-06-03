@@ -109,7 +109,7 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
 // Glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
-
+    implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.firebase:firebase-firestore-ktx")
 // RecyclerView & CardView

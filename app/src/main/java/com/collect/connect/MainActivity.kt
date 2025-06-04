@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var signupText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = FirebaseAuth.getInstance()
@@ -26,7 +27,6 @@ class MainActivity : ComponentActivity() {
         password = findViewById(R.id.password)
         loginButton = findViewById(R.id.loginButton)
         signupText = findViewById(R.id.signupText)
-
         loginButton.setOnClickListener {
             val email = username.text.toString().trim()
             val pass = password.text.toString().trim()

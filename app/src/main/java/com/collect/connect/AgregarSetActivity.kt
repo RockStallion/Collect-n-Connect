@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.collect.connect.api.sets.SetsActivity
@@ -13,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AgregarSetActivity : ComponentActivity() {
-
     // Instancias de Firestore y Auth
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
@@ -23,15 +24,65 @@ class AgregarSetActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.agregareetactivity)
 
+        val NameUser = findViewById<TextView>(R.id.user)
+
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val name = currentUser.displayName ?: currentUser.email ?: "collector"
+            NameUser.text = "Hello, $name!"
+        } else {
+            NameUser.text = "Hello, collector!"
+        }
+
         val nombreSet = findViewById<EditText>(R.id.editNombreSet)
         val numeroPiezas = findViewById<EditText>(R.id.editNumeroPiezas)
         val anio = findViewById<EditText>(R.id.editAnio)
         val tema = findViewById<EditText>(R.id.editTema)
         val btnGuardar = findViewById<Button>(R.id.btnGuardarSet)
-        val buscar: LinearLayout = findViewById(R.id.buscar)
-        buscar.setOnClickListener {
+
+        val PagScan: LinearLayout = findViewById(R.id.Scan)
+        val PagSets: LinearLayout = findViewById(R.id.Sets)
+        val PagPieces: LinearLayout = findViewById(R.id.Pieces)
+        val PagYou: LinearLayout = findViewById(R.id.you)
+        val PagPerfil: ImageView = findViewById(R.id.perfil)
+
+        PagScan.setOnClickListener {
+            val intent = Intent(this, Scan::class.java)
+            startActivity(intent)
+        }
+
+        PagSets.setOnClickListener {
             val intent = Intent(this, SetsActivity::class.java)
             startActivity(intent)
+        }
+
+        PagPieces.setOnClickListener {
+            val intent = Intent(this, Collections::class.java)
+            startActivity(intent)
+        }
+
+        PagYou.setOnClickListener {
+            val intent = Intent(this, Principal::class.java)
+            startActivity(intent)
+        }
+
+        PagPerfil.setOnClickListener {
+            val intent = Intent(this, Perfil::class.java)
+            startActivity(intent)
+        }
+        val salir: ImageView = findViewById(R.id.salir)
+
+        salir.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
+        val notificacion = findViewById<ImageView>(R.id.imgNotificacion)
+        notificacion.setOnClickListener {
+            Toast.makeText(this, "No hay notificaciones de momento", Toast.LENGTH_SHORT).show()
         }
         btnGuardar.setOnClickListener {
             val nombre = nombreSet.text.toString().trim()

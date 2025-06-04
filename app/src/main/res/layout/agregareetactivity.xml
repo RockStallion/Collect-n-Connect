@@ -49,9 +49,15 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/imgNotificacion"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_notification" />
+            <ImageView
+                android:id="@+id/salir"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/salir"/>
         </LinearLayout>
 
 

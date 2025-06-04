@@ -19,6 +19,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.collect.connect.Collections
+import com.collect.connect.MainActivity
 import com.collect.connect.Perfil
 import com.collect.connect.Principal
 import com.collect.connect.Scan
@@ -84,7 +85,15 @@ class SetsActivity : AppCompatActivity() {
             }
             fetchSets(year)
         }
+        val salir: ImageView = findViewById(R.id.salir)
 
+        salir.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
 
         PagScan.setOnClickListener {
             val intent = Intent(this, Scan::class.java)

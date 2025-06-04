@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="24dp"
         android:contentDescription="Logotipo"
-        android:src="@drawable/ic_logo" />
+        android:src="@drawable/lego" />
 
     <!-- Tarjeta de login -->
     <androidx.cardview.widget.CardView

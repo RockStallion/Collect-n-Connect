@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -18,18 +19,22 @@ class RegisterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
-        val buscar: LinearLayout = findViewById(R.id.buscar)
-        buscar.setOnClickListener {
-            val intent = Intent(this, SetsActivity::class.java)
-            startActivity(intent)
-        }
+
         auth = FirebaseAuth.getInstance()
 
         val backButton = findViewById<Button>(R.id.btnBackToLogin)
         backButton.setOnClickListener {
             finish()
         }
+        val salir: ImageView = findViewById(R.id.salir)
 
+        salir.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
         val registerButton = findViewById<Button>(R.id.registerButton)
         registerButton.setOnClickListener {
             val name = findViewById<EditText>(R.id.editTextName).text.toString()

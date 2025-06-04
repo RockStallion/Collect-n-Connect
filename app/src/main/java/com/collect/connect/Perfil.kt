@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.collect.connect.FireBase.ViewPagerAdapter
+import com.collect.connect.api.sets.SetsActivity
 import com.example.collect_n_connect.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -68,12 +69,12 @@ class Perfil : AppCompatActivity() {
         }
 
         PagSets.setOnClickListener {
-            val intent = Intent(this, Sets::class.java)
+            val intent = Intent(this, SetsActivity::class.java)
             startActivity(intent)
         }
 
         PagPieces.setOnClickListener {
-            val intent = Intent(this, Pieces::class.java)
+            val intent = Intent(this, Collections::class.java)
             startActivity(intent)
         }
 

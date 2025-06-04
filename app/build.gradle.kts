@@ -118,4 +118,21 @@ dependencies {
 
 // Fragment KTX (para supportFragmentManager.commit { ... })
     implementation ("androidx.fragment:fragment-ktx:1.4.1")
+
+    // Retrofit + Gson
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+// Coroutines (para llamadas asíncronas)
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
+// Picasso o Glide (para cargar imágenes de sets y piezas)
+    implementation ("com.squareup.picasso:picasso:2.8")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+
+
+// RecyclerView (para listas de sets y piezas)
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+
 }

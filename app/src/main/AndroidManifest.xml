@@ -33,7 +33,8 @@
         <activity android:name="com.collect.connect.AgregarSetActivity" />
         <activity android:name="com.collect.connect.Perfil" />
         <activity android:name="com.collect.connect.FireBase.SetsActivity" />
-
+        <activity android:name="com.collect.connect.api.sets.SetsActivity" />
+        <activity android:name="com.collect.connect.api.pieces.PiecesActivity" />
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

@@ -10,6 +10,7 @@ import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
 import android.net.Uri
 import android.widget.Toast
+import com.collect.connect.api.sets.SetsActivity
 
 class Pieces : ComponentActivity() {
 
@@ -40,12 +41,12 @@ class Pieces : ComponentActivity() {
         }
 
         PagSets.setOnClickListener {
-            val intent = Intent(this, Sets::class.java)
+            val intent = Intent(this, SetsActivity::class.java)
             startActivity(intent)
         }
 
         PagPieces.setOnClickListener {
-            val intent = Intent(this, Pieces::class.java)
+            val intent = Intent(this, Collections::class.java)
             startActivity(intent)
         }
 

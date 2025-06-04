@@ -1,10 +1,13 @@
 package com.collect.connect
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import com.collect.connect.api.sets.SetsActivity
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,7 +28,11 @@ class AgregarSetActivity : ComponentActivity() {
         val anio = findViewById<EditText>(R.id.editAnio)
         val tema = findViewById<EditText>(R.id.editTema)
         val btnGuardar = findViewById<Button>(R.id.btnGuardarSet)
-
+        val buscar: LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
         btnGuardar.setOnClickListener {
             val nombre = nombreSet.text.toString().trim()
             val piezas = numeroPiezas.text.toString().trim()

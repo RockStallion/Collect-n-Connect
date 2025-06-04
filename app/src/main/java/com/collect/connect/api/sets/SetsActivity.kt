@@ -20,10 +20,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.collect.connect.Collections
 import com.collect.connect.Perfil
-import com.collect.connect.Pieces
 import com.collect.connect.Principal
 import com.collect.connect.Scan
-import com.collect.connect.Sets
 import com.google.firebase.auth.FirebaseAuth
 
 class SetsActivity : AppCompatActivity() {

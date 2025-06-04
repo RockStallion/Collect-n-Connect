@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import com.collect.connect.api.sets.SetsActivity
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -16,7 +18,11 @@ class RegisterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
-
+        val buscar: LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
         auth = FirebaseAuth.getInstance()
 
         val backButton = findViewById<Button>(R.id.btnBackToLogin)

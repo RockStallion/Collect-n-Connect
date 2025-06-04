@@ -29,6 +29,12 @@ class Perfil : AppCompatActivity() {
         val PagYou: LinearLayout = findViewById(R.id.you)
         val PagPerfil: ImageView = findViewById(R.id.perfil)
 
+        val buscar:LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
+
         auth = FirebaseAuth.getInstance()
 
         val nameText = findViewById<TextView>(R.id.user)

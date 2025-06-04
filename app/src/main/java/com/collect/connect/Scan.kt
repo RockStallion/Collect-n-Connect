@@ -26,7 +26,11 @@ class Scan : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.scan)
-
+        val buscar:LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
         // Verificar permisos de cámara en tiempo de ejecución
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
             != PackageManager.PERMISSION_GRANTED) {

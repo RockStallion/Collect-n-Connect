@@ -25,7 +25,11 @@ class Pieces : ComponentActivity() {
         val PagPieces: LinearLayout = findViewById(R.id.Pieces)
         val PagYou: LinearLayout = findViewById(R.id.you)
         val PagPerfil: ImageView = findViewById(R.id.perfil)
-
+        val buscar:LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
         val NameUser = findViewById<TextView>(R.id.user)
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser

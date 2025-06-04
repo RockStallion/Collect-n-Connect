@@ -25,7 +25,11 @@ class Principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.principal)
-
+        val buscar:LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
         auth = FirebaseAuth.getInstance()
 
         val NameUser = findViewById<TextView>(R.id.user)

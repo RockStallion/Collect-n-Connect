@@ -27,7 +27,11 @@ class Collections : AppCompatActivity() {
         setContentView(R.layout.collections)
 
         auth = FirebaseAuth.getInstance()
-
+        val buscar:LinearLayout = findViewById(R.id.buscar)
+        buscar.setOnClickListener {
+            val intent = Intent(this, SetsActivity::class.java)
+            startActivity(intent)
+        }
         val nameUser = findViewById<TextView>(R.id.user)
         val currentUser = auth.currentUser
         if (currentUser != null) {

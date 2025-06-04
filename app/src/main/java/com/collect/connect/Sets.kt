@@ -10,13 +10,6 @@ import android.widget.Toast
 import com.example.collect_n_connect.R
 import com.google.firebase.auth.FirebaseAuth
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import com.collect.connect.Api.SetAdapter
-import com.collect.connect.Api.SetsResponse
 
 
 class Sets : AppCompatActivity() {
@@ -43,32 +36,6 @@ class Sets : AppCompatActivity() {
             NameUser.text = "Hello, collector!"
         }
 
-
-        // —— INICIO: CARGAR RECYCLER VIEW CON RETROFIT ——
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerSets)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
-        // Llamada usando el parámetro ?key= en vez de encabezado
-        RetrofitClient.api.getLegoSets().enqueue(object : Callback<SetsResponse> {
-            override fun onResponse(call: Call<SetsResponse>, response: Response<SetsResponse>) {
-                if (response.isSuccessful) {
-                    val sets = response.body()?.results ?: emptyList()
-                    recyclerView.adapter = SetAdapter(sets)
-                } else {
-                    val code = response.code()
-                    val msg  = response.errorBody()?.string()
-                    Toast.makeText(
-                        this@Sets,
-                        "Error al cargar sets. Código: $code\n${msg ?: "Sin detalle"}",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-
-            override fun onFailure(call: Call<SetsResponse>, t: Throwable) {
-                Toast.makeText(this@Sets, "Fallo de conexión: ${t.message}", Toast.LENGTH_LONG).show()
-            }
-        })
 
 
         PagScan.setOnClickListener {
